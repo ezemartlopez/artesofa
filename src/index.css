@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .screens {
+      @apply  xl:bg-red-400 lg:bg-blue-400 md:bg-green-400 sm:bg-orange-400 bg-slate-900;
+    }
+}

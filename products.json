@@ -1,0 +1,113 @@
+{
+    "products":[
+      {
+        "id": 1,
+        "name": "Mesa ratona Osaka",
+        "description": "Medida: 1.10x50 Altura de 42cm",
+        "price": "255600",
+        "cash_price": "217260",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image-11-60c9a8b6e7748d6daa16842560736870-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image1-14eaf9dcbcfffd099816842560736895-640-0.webp"
+      },
+      {
+        "id": 2,
+        "name": "ITALIANO",
+        "description": "EL VALOR PUBLICADO CORRESPONDE A LA MEDIDA DE 1.80X0.90 *Adicionales en la foto no incluidos en el valor: Mojito antimanchas Consultanos su valor en otras me...",
+        "price": "562700",
+        "cash_price": "478295",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-07-09_36-a4a536c7ebc9da44f616628728640126-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-07-09_371-94d9936a0f0ce21e9116626508928486-640-0.webp"
+      },
+      {
+        "id": 3,
+        "name": "Rack Met",
+        "description": "Medida: 180x35cm Altura de 55cm Fabricado en enchapado paraiso de 19mm, terminacion en hidro laca semi mate. Tiene 2 puertas y 3 estantes.",
+        "price": "493900",
+        "cash_price": "419815",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/met-11-09d5cbf40b5fa8918b16559097896898-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/met-21-eefe736de910e273fc16559097896919-640-0.webp"
+      },
+      {
+        "id": 4,
+        "name": "MONACO",
+        "description": "EL PRODUCTO DE LA IMAGEN TIENE UNA MEDIDA UNICA *Adicionales en la foto no incluidos en el valor: Tapizado Mojito antimanchas ¿Que opciones incluyen los prec...",
+        "price": "573200",
+        "cash_price": "487220",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-11-04-231-5f4f6d9046ebeeeb2d16812345752654-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/whatsapp-image-2023-04-11-at-2-34-56-pm1-f2704bdabd7bc5436d16812345722464-640-0.webp"
+      },
+      {
+        "id": 5,
+        "name": "MIAMI",
+        "description": "EL PRODUCTO DE LA IMAGEN TIENE UNA MEDIDA UNICA *Adicionales en la foto no incluidos en el valor: Tapizado Mojito antimanchas ¿Que opciones incluyen los prec...",
+        "price": "286600",
+        "cash_price": "243610",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-20-10_211-2c397e3ed81738ce6616744896985260-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-20-10_201-e52d2a3f504423d60616744896986160-640-0.webp"
+      },
+      {
+        "id": 6,
+        "name": "PUFF REDONDO",
+        "description": "EL PRODUCTO DE LA IMAGEN TIENE UNA MEDIDA UNICA ¿Que opciones incluyen los precios base? Telas: pana antimanchas / chenille antidesgarro / lino antimanchas P...",
+        "price": "92000",
+        "cash_price": "78200",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/puf-redondo1-a24bdd9b6277625aaf16745804998497-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/puf-redondo1-a24bdd9b6277625aaf16745804998497-640-0.webp"
+      },
+      {
+        "id": 7,
+        "name": "DIVAN CAMA",
+        "description": "EL VALOR PUBLICADO CORRESPONDE A LA MEDIDA DE 2.10x0.90 / el mismo viene con el colchon incluido. Consultanos su valor en otras medidas: 2.20 / 2.30 ¿Que op...",
+        "price": "905800",
+        "cash_price": "770930",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-13-07_301-e5fec9ca111e796e7016588550812569-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-13-07_3711-ef21359b14c5ec312516596389357881-640-0.webp"
+      },
+      {
+        "id": 8,
+        "name": "CAROL",
+        "description": "EL VALOR PUBLICADO CORRESPONDE A LA MEDIDA DE 1.80x1.60 Consultanos su valor en otras medidas: 2.00x1.60 / 2.20x1.60 / 2.30x1.80 / 2.50x1.80 / 2.80x2.00 ¿Que...",
+        "price": "702100",
+        "cash_price": "596785",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-25-08_171-e7e70ec0eae728d41516618744430433-240-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-25-08_181-b12563396501fcbe9516618744433511-240-0.webp"
+      },
+      {
+        "id": 9,
+        "name": "PERSIA",
+        "description": "EL VALOR PUBLICADO CORRESPONDE A LA MEDIDA DE 1.80x090 Consultanos su valor en otras medidas: 2.00 / 2.20 / formato esquinero ¿Que opciones incluyen los prec...",
+        "price": "730290",
+        "cash_price": "620746",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image-31-3c565e4fc7c1fc472a16855429645624-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image-11-737ba808f15a0aea5d16855429646235-640-0.webp"
+      },
+      {
+        "id": 10,
+        "name": "Esquinero Verona / Precio especial 2x1.60",
+        "description": " ¿CÓMO FUNCIONA ESTA PROMO? *El valor expresado en esta publicación es por la medida de 2.00x1.60 Únicamente tapizado CITY antidesgarro (tapizado de la foto...",
+        "price": "684000",
+        "cash_price": "581400",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image-51-73aacc94cebc9c108516787922032589-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-31-01-23_2-11-36c992f4576f3dbefa16764975179012-640-0.webp"
+      },
+      {
+        "id": 11,
+        "name": "Verona / Precio especial 1.80",
+        "description": " ¿CÓMO FUNCIONA ESTA PROMO? *El valor expresado en esta publicación es por la medida de 180x090 Únicamente tapizado CITY antidesgarro (tapizado de la foto c...",
+        "price": "520800",
+        "cash_price": "442680",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/image-61-a128c8d7c13167be8716787921899773-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-30-01-23_91-ca400ada222a5711cb16764972758860-640-0.webp"
+      },
+      {
+        "id": 12,
+        "name": "DALI",
+        "description": "EL VALOR PUBLICADO CORRESPONDE A LA MEDIDA DE 2.50x1.80 Consultanos su valor en otras medidas: 2.80x2.20 / 3.10x2.40 ¿Que opciones incluyen los precios base?...",
+        "price": "1080500",
+        "cash_price": "918225",
+        "image_primary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-22-12_1051-be0f8dbbd82810304316730199587572-640-0.webp",
+        "image_secondary": "https://dcdn.mitiendanube.com/stores/001/271/935/products/edit-22-12_1111-2f82742b3a393f0ad116730199588667-640-0.webp"
+      }
+    ]
+       
+}
