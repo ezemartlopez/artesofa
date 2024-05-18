@@ -21,7 +21,9 @@ function Navbar({toggle, navigation}) {
             </div>
 
             <div className="h-full w-auto flex justify-center items-center cursor-pointer">
-            <img src={Logo} alt="imagen_logo" className="h-[60px] object-cover" />
+              <a href="/">
+                <img src={Logo} alt="imagen_logo" className="h-[60px] object-cover" />
+              </a>
             </div>
 
             <div className="absolute right-4 h-full w-auto flex justify-center items-center">

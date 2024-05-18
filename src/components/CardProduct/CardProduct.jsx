@@ -15,9 +15,9 @@ function CardProduct({product}) {
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
-        <div className="relative h-[350px] w-full sm:flex-grow">
-          <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-500 ease-in-out" />
-          <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-500 ease-in-out hover:opacity-100" />
+        <div className="relative h-[350px] w-full cursor-pointer sm:flex-grow">
+          <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-700 ease-in-out" />
+          <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
         </div>
         {/*<!-- Contenedor del contenido -->*/}
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">

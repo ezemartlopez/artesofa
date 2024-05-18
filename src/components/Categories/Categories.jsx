@@ -9,43 +9,51 @@ function Categories() {
   <div className="grid h-full w-full grid-cols-12 gap-8">
 
     <div className="h-full xl:col-span-5 col-span-12 ">
-      <div className="w-full h-full relative group overflow-hidden">
-        <img src={Sofas} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-        <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
-          <span className="text-[70px] text-white font-rubik font-bold z-10">SOFAS</span>
+      <a href="/sofas" target="_blank">
+        <div className="w-full h-full relative cursor-pointer group overflow-hidden">
+          <img src={Sofas} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+          <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
+            <span className="text-[70px] text-white font-rubik font-bold z-10">SOFAS</span>
+          </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div className="xl:col-span-7 col-span-12 grid grid-rows-2 gap-8">
 
-      <div className="">
-        <div className="w-full h-full relative group overflow-hidden">
-          <img src={Esquineros} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-          <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
-            <span className="sm:text-[70px] text-[50px] text-white font-rubik font-bold z-10">ESQUINEROS</span>
+      <div>
+        <a href="/esquineros" target="_blank">
+          <div className="w-full h-full relative cursor-pointer group overflow-hidden">
+            <img src={Esquineros} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
+              <span className="sm:text-[70px] text-[50px] text-white font-rubik font-bold z-10">ESQUINEROS</span>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
 
       <div className="grid sm:grid-cols-2 sm:grid-rows-1 grid-cols-1 grid-rows-2 gap-8">
 
-        <div className="">
-          <div className="w-full h-full relative group overflow-hidden">
-            <img src={Muebles} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-            <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
-              <span className="md:text-[50px] sm:text-[40px] text-[50px] text-white font-rubik font-bold z-10">MUEBLES</span>
+        <div>
+          <a href="/muebles" target="_blank">
+            <div className="w-full h-full relative cursor-pointer group overflow-hidden">
+              <img src={Muebles} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+              <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
+                <span className="md:text-[50px] sm:text-[40px] text-[50px] text-white font-rubik font-bold z-10">MUEBLES</span>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
-        <div className="">
-          <div className="w-full h-full relative group overflow-hidden">
-            <img src={Rinconeros} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
-            <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
-              <span className="md:text-[50px] sm:text-[40px] text-[50px] text-white font-rubik font-bold z-10">RINCONEROS</span>
+        <div>
+          <a href="/rinconeros" target="_blank">
+            <div className="w-full h-full relative cursor-pointer group overflow-hidden">
+              <img src={Rinconeros} alt="categorie_sofa" className="absolute w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/>
+              <div className="absolute z-10 w-full h-full flex justify-center items-center bg-slate-500 bg-opacity-25 group-hover:bg-opacity-40 group-hover:bg-slate-700 transition-all duration-500">
+                <span className="md:text-[50px] sm:text-[40px] text-[50px] text-white font-rubik font-bold z-10">RINCONEROS</span>
+              </div>
             </div>
-          </div>
+          </a>
         </div>
 
       </div>

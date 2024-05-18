@@ -7,9 +7,9 @@ import Categories from "@components/Categories/Categories";
 import InstagramLink from "@components/InstagramLink/InstagramLink";
 import Footer from "@components/Footer/Footer";
 import { useState } from "react";
-import Slider from "./components/Slider/Slider";
-import ModalCartShop from "./components/ModalCartShop/ModalCartShop";
-import ModalLinks from "./components/ModalLinks/ModalLinks";
+import Slider from "@components/Slider/Slider";
+import ModalCartShop from "@components/ModalCartShop/ModalCartShop";
+import ModalLinks from "@components/ModalLinks/ModalLinks";
 
 function useShoppingCart(){
   const [visibleCart, setvisiblecart] = useState(false);
