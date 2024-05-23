@@ -27,7 +27,9 @@ export default function App() {
   const {visibleLinks, toggleLinks} = useLinks();
 
   return (
-  <div className={"relative max-w-screen h-screen " + (visibleCart || visibleLinks?"overflow-y-hidden":"")}> {/* */}
+  
+  <div className="relative max-w-screen h-screen ">
+    {/*<div className={"relative max-w-screen h-screen " + (visibleCart || visibleLinks?"":"")}> */}
     <ModalLinks condition={visibleLinks} toggle={toggleLinks}/>
     <ModalCartShop condition={visibleCart} toggle={toggleCart}/>
 
