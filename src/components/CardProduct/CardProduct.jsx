@@ -7,15 +7,29 @@
     image_hover: product.image_secondary
 }
 */
+function ButtonAddCart({handleClick}) {
+  return(
+  <span className="absolute top-2 right-2 z-10 flex group">
+    <span className="flex items-center pl-4 text-white text-sm py-1 px-2 rounded-l-full bg-orange-400 opacity-0 transition-opacity ease-linear duration-300 group-hover:opacity-100">Agregar al carrito</span>
+    <span className="size-10  rounded-full flex items-center justify-center bg-orange-400/50 text-white font-semibold text-2xl group-hover:bg-orange-400 transition-colors duration-0 group-hover:rounded-l-none" onClick={handleClick}>+</span>
+  </span>
+  )
+}
+
 function CardProduct({product}) {
-  const {name, price, cash_price, image, image_hover} = product;
+  const {name, price, cash_price, image, image_hover, id} = product;
   const cuotes = price / 6;
+  const handleClick = () =>{
+    console.log(id);
+  }
   return (
 <div className="font-rubik h-auto w-full border border-gray-200 bg-white shadow-md">
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
         <div className="relative h-[350px] w-full cursor-pointer sm:flex-grow">
+          {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
+          <ButtonAddCart handleClick={handleClick}/>
           <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-700 ease-in-out" />
           <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
         </div>
