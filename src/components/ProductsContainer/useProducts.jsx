@@ -3,6 +3,7 @@ const url = "http://localhost:3000/products";
 
 function customProduct(product){
   let newData = {
+    id:product.id,
     name: product.name,
     price: product.price,
     cash_price: product.cash_price,
