@@ -30,8 +30,8 @@ function CardProduct({product}) {
         <div className="relative h-[350px] w-full cursor-pointer sm:flex-grow">
           {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
           <ButtonAddCart handleClick={handleClick}/>
-          <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-700 ease-in-out" />
-          <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
+          <img src={image} alt="imagen" className="absolute h-full w-full transform object-fill transition duration-700 ease-in-out" />
+          <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-fill opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
         </div>
         {/*<!-- Contenedor del contenido -->*/}
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">

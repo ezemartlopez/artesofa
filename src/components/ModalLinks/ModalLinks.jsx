@@ -30,14 +30,14 @@ function ModalLinks({ condition, toggle }) {
                   {/* Body Content */}
                   <ul className="w-full flex flex-col gap-4">
                     <li><a href="/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Inicio</a></li>
-                    <li><a href="/sofas" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás</a></li>
-                    <li><a href="/esquineros" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Esquineros</a></li>
-                    <li><a href="/rinconeros" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Rinconeros</a></li>
-                    <li><a href="/sofasCama" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás Cama</a></li>
-                    <li><a href="/precioEspecial" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Precio Especial</a></li>
-                    <li><a href="/individuales" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Individuales</a></li>
-                    <li><a href="/muebles" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Muebles</a></li>
-                    <li><a href="/complementos" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Complementos</a></li>
+                    <li><a href="/sofas/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás</a></li>
+                    <li><a href="/esquineros/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Esquineros</a></li>
+                    <li><a href="/rinconeros/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Rinconeros</a></li>
+                    <li><a href="/sofas-cama/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás Cama</a></li>
+                    <li><a href="/precio-especial/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Precio Especial</a></li>
+                    <li><a href="/individuales/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Individuales</a></li>
+                    <li><a href="/muebles/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Muebles</a></li>
+                    <li><a href="/complemento/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Complementos</a></li>
                   </ul>
                 </div>
                 {/* Base */}
