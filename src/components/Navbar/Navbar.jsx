@@ -2,8 +2,10 @@ import Logo from "@assets/Navbar/logo.png";
 import Carrito from "@assets/Navbar/cart.svg";
 import Search from "@assets/Navbar/search.svg";
 import Menu from "@assets/Navbar/menu.svg";
+import useCartShop from "@hooks/useCartShop";
 
 function Navbar({toggle, navigation}) {
+  const {amountProducts} = useCartShop();
   return (
     <div className="w-full shadow-lg">
         <div className="relative flex h-[80px] w-full justify-center bg-white">
@@ -29,7 +31,7 @@ function Navbar({toggle, navigation}) {
             <div className="absolute right-4 h-full w-auto flex justify-center items-center">
                 <div className="size-[60px] flex justify-center items-center relative cursor-pointer" onClick={toggle}>
                   <img src={Carrito} alt="carrito" className="size-[35px]"/>
-                  <span className="bg-orange-500 size-5 rounded-[50%] text-xs text-white flex justify-center items-center absolute right-[5px] top-[5px]">10</span>
+                  <span className="bg-orange-500 size-5 rounded-[50%] text-xs text-white flex justify-center items-center absolute right-[5px] top-[5px]">{amountProducts}</span>
                 </div>
             </div>
         </div>
