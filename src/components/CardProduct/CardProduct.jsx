@@ -9,10 +9,10 @@
 */
 function ButtonAddCart({handleClick}) {
   return(
-  <span className="absolute top-2 right-2 z-10 flex group">
-    <span className="flex items-center pl-4 text-white text-sm py-1 px-2 rounded-l-full bg-orange-400 opacity-0 transition-opacity ease-linear duration-300 group-hover:opacity-100">Agregar al carrito</span>
-    <span className="size-10  rounded-full flex items-center justify-center bg-orange-400/50 text-white font-semibold text-2xl group-hover:bg-orange-400 transition-colors duration-0 group-hover:rounded-l-none" onClick={handleClick}>+</span>
-  </span>
+    <div class="group absolute z-10 right-2 top-2 flex h-8 w-auto justify-end" onClick={handleClick}>
+    <span class="flex w-0 translate-x-2 items-center overflow-hidden text-nowrap rounded-l-full bg-orange-400 pl-4 opacity-0 transition-all duration-500 group-hover:w-[160px] group-hover:opacity-100 text-white">Agregar al Carrito</span>
+    <span class="flex size-8 cursor-pointer items-center justify-center rounded-full bg-orange-400 font-extrabold text-white group-hover:rounded-l-none">+</span>
+  </div>
   )
 }
 
@@ -27,7 +27,7 @@ function CardProduct({product}) {
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
-        <div className="relative h-[350px] w-full cursor-pointer sm:flex-grow">
+        <div className="relative h-[450px] w-full cursor-pointer sm:flex-grow">
           {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
           <ButtonAddCart handleClick={handleClick}/>
           <img src={image} alt="imagen" className="absolute h-full w-full transform object-fill transition duration-700 ease-in-out" />
@@ -36,7 +36,7 @@ function CardProduct({product}) {
         {/*<!-- Contenedor del contenido -->*/}
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">
           <span className="block font-normal">{name}</span>
-          <span className="block font-bold text-orange-500">EFECTIVO $ {cash_price}</span>
+          {cash_price ? <span className="block font-bold text-orange-500">EFECTIVO $ {cash_price}</span>: null}
           <span className="block font-medium">LISTA $ {price}</span>
           <span className="block text-sm">6 cuotas sin interés de $ {cuotes.toFixed(2)}</span>
         </div>
@@ -80,4 +80,13 @@ export default CardProduct;
         </div>
       </div>
     </div>
+*/
+
+/*
+<div class="relative size-[600px] bg-blue-600">
+  <div class="group absolute right-2 top-2 flex h-8 w-auto justify-end">
+    <span class="flex w-0 translate-x-2 items-center overflow-hidden text-nowrap rounded-l-full bg-orange-400 pl-2 opacity-0 transition-all duration-500 group-hover:w-[200px] group-hover:opacity-100">Texto Informacion</span>
+    <span class="flex size-8 cursor-pointer items-center justify-center rounded-full bg-orange-400 font-extrabold text-white group-hover:rounded-l-none">+</span>
+  </div>
+</div>
 */
