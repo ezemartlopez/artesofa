@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-const url = "http://localhost:3000/products";
 
 function customProduct(product){
   let newData = {
@@ -13,10 +12,11 @@ function customProduct(product){
   return newData;
 }
 
-function useProducts() {
+function useProducts(urlProducts) {
   const [products, setProducts] = useState([]);
+  console.log("url useProduct: " + urlProducts);
   useEffect(() => {
-    fetch(url)
+    fetch(urlProducts)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
