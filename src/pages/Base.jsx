@@ -17,7 +17,7 @@ function useLinks(){
   return {visibleLinks, toggleLinks};
 }
 
-export default function Base() {
+export default function Base({cantidad, products, removeProductById, incrementProductCount, decrementProductCount}) {
   const {visibleCart, toggleCart} = useShoppingCart();
   const {visibleLinks, toggleLinks} = useLinks();
 
@@ -26,14 +26,14 @@ export default function Base() {
   <div className="relative max-w-screen h-screen ">
     {/*<div className={"relative max-w-screen h-screen " + (visibleCart || visibleLinks?"":"")}> */}
     <ModalLinks condition={visibleLinks} toggle={toggleLinks}/>
-    <ModalCartShop condition={visibleCart} toggle={toggleCart}/>
+    <ModalCartShop condition={visibleCart} toggle={toggleCart} products={products} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount}/>
 
     <div className="flex flex-col justify-start px-4">
       <div className="w-full h-full relative">
         {/*<div class="fixed inset-0 z-10 flex max-h-full max-w-full items-center justify-center overflow-hidden bg-black bg-opacity-50 text-white">Prueba de codigo superpuesto</div>*/}
         <header className="sticky top-0 min-h-20 w-full block z-20">
           <nav className="w-full">
-            <Navbar toggle={toggleCart} navigation={toggleLinks}></Navbar>
+            <Navbar toggle={toggleCart} navigation={toggleLinks} cantidad={cantidad}></Navbar>
           </nav>
         </header>
 

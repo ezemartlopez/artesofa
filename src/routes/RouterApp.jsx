@@ -9,22 +9,24 @@ import Muebles from '../pages/Muebles';
 import Individuales from '../pages/Individuales';
 import Esquineros from '../pages/Esquineros';
 import Complemento from '../pages/Complemento';
-
+import useCartShop from "@hooks/useCartShop";
 function RouterApp() {
-  
+  const {cartList, addProduct, amountProducts, removeProductById, incrementProductCount, decrementProductCount} = useCartShop();
+  const cantidad = amountProducts();
+
   return (
     <Router>  
       <Routes>
-        <Route path="/" element={<Base/>}>
-          <Route path="" element={<Home/>} />
-          <Route path="sofas/" element={<Sofas/>} />
-          <Route path="sofas-cama/" element={<SofaCama/>} />
-          <Route path="rinconeros/" element={<Rinconeros/>} />
-          <Route path="precio-especial/" element={<PrecioEspecial/>} />
-          <Route path="muebles/" element={<Muebles/>} />
-          <Route path="individuales/" element={<Individuales/>} />
-          <Route path="esquineros/" element={<Esquineros/>} />
-          <Route path="complemento/" element={<Complemento/>} />
+        <Route path="/" element={<Base cantidad={cantidad} products={cartList} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount}/>}>
+          <Route path="" element={<Home addProduct={addProduct}/>} />
+          <Route path="sofas/" element={<Sofas addProduct={addProduct}/>} />
+          <Route path="sofas-cama/" element={<SofaCama addProduct={addProduct}/>} />
+          <Route path="rinconeros/" element={<Rinconeros addProduct={addProduct}/>} />
+          <Route path="precio-especial/" element={<PrecioEspecial addProduct={addProduct}/>} />
+          <Route path="muebles/" element={<Muebles addProduct={addProduct}/>} />
+          <Route path="individuales/" element={<Individuales addProduct={addProduct}/>} />
+          <Route path="esquineros/" element={<Esquineros addProduct={addProduct}/>} />
+          <Route path="complemento/" element={<Complemento addProduct={addProduct}/>} />
         </Route>
       </Routes>
   </Router>

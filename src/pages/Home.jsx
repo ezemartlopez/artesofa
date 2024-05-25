@@ -5,12 +5,12 @@ import Categories from "@components/Categories/Categories";
 import InstagramLink from "@components/InstagramLink/InstagramLink";
 import Slider from "@components/Slider/Slider";
 
-function Home() {
+function Home({addProduct}) {
   const url = "http://localhost:5000/";
   return (
     <>
         <Slider/>
-        <ProductsContainer urlProducts={url}/>
+        <ProductsContainer urlProducts={url} addProduct={addProduct}/>
         <TitleHash/>
         <Categories/>
         <PaymentMethods/>
