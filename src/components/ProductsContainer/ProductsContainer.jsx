@@ -4,7 +4,7 @@ import useProducts from "./useProducts";
 function ProductsContainer({urlProducts}) {
   const customStyles = { gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', };
   const products = useProducts(urlProducts);
-  console.log("url: " + urlProducts);
+  //console.log("url: " + urlProducts);
   return (
     <div className="pt-4">
       <div className="w-auto grid gap-6" style={customStyles}>
