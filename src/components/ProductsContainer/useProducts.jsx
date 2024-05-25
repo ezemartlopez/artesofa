@@ -14,7 +14,7 @@ function customProduct(product){
 
 function useProducts(urlProducts) {
   const [products, setProducts] = useState([]);
-  console.log("url useProduct: " + urlProducts);
+  //console.log("url useProduct: " + urlProducts);
   useEffect(() => {
     fetch(urlProducts)
     .then(response => {
