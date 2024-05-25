@@ -1,5 +1,3 @@
-import useCartShop from "@hooks/useCartShop";
-
 /*CONTRATO
 {
     name: product.name,
@@ -9,6 +7,17 @@ import useCartShop from "@hooks/useCartShop";
     image_hover: product.image_secondary
 }
 */
+function formatNumberWithDots(numberString) {
+  // Convertir el string a un número
+  const number = parseFloat(numberString);
+  // Verificar si la conversión fue exitosa
+  if (isNaN(number)) {
+      throw new Error("Input is not a valid number");
+  }
+  // Formatear el número con puntos como separadores de miles
+  return number.toLocaleString('de-DE');
+}
+
 function ButtonAddCart({handleClick}) {
   return(
     <div className="group absolute z-10 right-2 top-2 flex h-8 w-auto justify-end" onClick={handleClick}>
@@ -18,12 +27,13 @@ function ButtonAddCart({handleClick}) {
   )
 }
 
-function CardProduct({product}) {
+function CardProduct({product, addProduct}) {
+  const CUOTAS = 6;
   const {name, price, cash_price, image, image_hover, id} = product;
-  const {addProduct} = useCartShop();
-  const cuotes = price / 6;
+  const cuotes = price / CUOTAS;
+  const cuotesString = cuotes.toFixed(2) + "";
   const handleClick = () =>{
-    console.log(id);
+    //console.log(id);
     addProduct(id, name, image, price);
   }
   return (
@@ -31,7 +41,7 @@ function CardProduct({product}) {
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
-        <div className="relative h-[450px] w-full cursor-pointer sm:flex-grow">
+        <div className="relative h-[430px] w-full cursor-pointer sm:flex-grow">
           {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
           <ButtonAddCart handleClick={handleClick}/>
           <img src={image} alt="imagen" className="absolute h-full w-full transform object-fill transition duration-700 ease-in-out" />
@@ -40,9 +50,9 @@ function CardProduct({product}) {
         {/*<!-- Contenedor del contenido -->*/}
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">
           <span className="block font-normal">{name}</span>
-          {cash_price ? <span className="block font-bold text-orange-500">EFECTIVO $ {cash_price}</span>: null}
-          <span className="block font-medium">LISTA $ {price}</span>
-          <span className="block text-sm">6 cuotas sin interés de $ {cuotes.toFixed(2)}</span>
+          {cash_price ? <span className="block font-bold text-orange-500">EFECTIVO $ {formatNumberWithDots(cash_price)}</span>: null}
+          <span className="block font-medium">LISTA $ {formatNumberWithDots(price)}</span>
+          <span className="block text-sm">{CUOTAS} cuotas sin interés de $ {formatNumberWithDots(cuotesString)}</span>
         </div>
       </div>
     </div>
