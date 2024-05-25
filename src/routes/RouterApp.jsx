@@ -11,11 +11,12 @@ import Esquineros from '../pages/Esquineros';
 import Complemento from '../pages/Complemento';
 
 function RouterApp() {
+  
   return (
     <Router>  
       <Routes>
         <Route path="/" element={<Base/>}>
-          <Route path="" element={<Home />} />
+          <Route path="" element={<Home/>} />
           <Route path="sofas/" element={<Sofas/>} />
           <Route path="sofas-cama/" element={<SofaCama/>} />
           <Route path="rinconeros/" element={<Rinconeros/>} />
