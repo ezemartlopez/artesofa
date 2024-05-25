@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+
 
 # Ejemplo de productos
 productos = [
@@ -967,9 +970,16 @@ productos = [
 ]
 
 # Método para obtener todos los productos
-@app.route('/productos', methods=['GET'])
+@app.route('/', methods=['GET'])
 def get_productos():
-    return jsonify(productos)
+    lista_claves = ["sofas", "complemento", "esquineros", "rinconeros", "sofa-cama", "precio-especial", "individuales", "muebles"]
+    lista_productos = []
+    for clave in lista_claves:
+      filtro = [p for p in productos if p["type"] == clave]
+      lista_productos.append(filtro[0])
+      lista_productos.append(filtro[1])
+    print(len(lista_productos))
+    return jsonify(lista_productos)
 
 # Método para obtener un producto por ID
 @app.route('/productos/<int:producto_id>', methods=['GET'])
@@ -1025,7 +1035,7 @@ def get_type_rinconeros():
 # Método para obtener productos por tipo
 @app.route('/sofas-cama/', methods=['GET'])
 def get_type_sofa_cama():
-    producto_type = "sofas-cama"
+    producto_type = "sofa-cama"
     productos_filtrados = [p for p in productos if p["type"] == producto_type]
     if productos_filtrados:
         return jsonify(productos_filtrados)
