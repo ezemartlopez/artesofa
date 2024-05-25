@@ -6,10 +6,11 @@ import InstagramLink from "@components/InstagramLink/InstagramLink";
 import Slider from "@components/Slider/Slider";
 
 function Home() {
+  const url = "http://localhost:5000/";
   return (
     <>
         <Slider/>
-        <ProductsContainer/>
+        <ProductsContainer urlProducts={url}/>
         <TitleHash/>
         <Categories/>
         <PaymentMethods/>
