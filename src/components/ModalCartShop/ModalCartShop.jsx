@@ -1,9 +1,31 @@
 import Xmark from "@assets/Xmark/Xmark.svg";
 import { useEffect, useState } from "react";
 import Modal from "../Modal/Modal";
+import useCartShop from "@hooks/useCartShop";
   
+function ItemProduct({product}){
+  return (
+    <div className="py-1 flex">
+      <div className="w-auto">
+        <img src={product.url_image} alt="" className="h-[90px] w-[110px]"/> 
+      </div>
+      <div className="flex-grow flex flex-col pl-6 justify-between">
+        <span className="">{product.name}</span>
+        <span className="font-bold">${product.price}</span>
+        <div className="w-min rounded-full p-1 border border-slate-300/80 flex">
+          <span className="size-8 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">-</span>
+          <span className="h-8 w-10 flex justify-center items-center">{product.count}</span>
+          <span className="size-8 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">+</span>
+        </div>
+        
+      </div>
+    </div>
+  );
+}
+
 function ModalCartShop({ condition, toggle }) {
   const [show, setShow] = useState(false);
+  const {cartList} = useCartShop();
   const closeModal = () =>{
     setShow(false);
     setTimeout(()=>{toggle()},300);
@@ -27,8 +49,10 @@ function ModalCartShop({ condition, toggle }) {
                   </div>
                 </div>
                 {/* Body */}
-                <div className="w-full flex-grow sm:bg-blue-300 bg-red-300 overflow-y">
+                <div className="w-full flex-grow overflow-y">
                   {/* Body Content */}
+                  {cartList.length === 0? <p>No hay elementos a mostrar</p>: null}
+                  {cartList.map((product, index) => (<ItemProduct product={product} key={index}/>))}
                 </div>
                 {/* Base */}
                 <div className="sticky">
