@@ -1,3 +1,5 @@
+import useCartShop from "@hooks/useCartShop";
+
 /*CONTRATO
 {
     name: product.name,
@@ -9,18 +11,20 @@
 */
 function ButtonAddCart({handleClick}) {
   return(
-    <div class="group absolute z-10 right-2 top-2 flex h-8 w-auto justify-end" onClick={handleClick}>
-    <span class="flex w-0 translate-x-2 items-center overflow-hidden text-nowrap rounded-l-full bg-orange-400 pl-4 opacity-0 transition-all duration-500 group-hover:w-[160px] group-hover:opacity-100 text-white">Agregar al Carrito</span>
-    <span class="flex size-8 cursor-pointer items-center justify-center rounded-full bg-orange-400 font-extrabold text-white group-hover:rounded-l-none">+</span>
+    <div className="group absolute z-10 right-2 top-2 flex h-8 w-auto justify-end" onClick={handleClick}>
+    <span className="flex w-0 translate-x-2 items-center overflow-hidden text-nowrap rounded-l-full bg-orange-400 pl-4 opacity-0 transition-all duration-500 group-hover:w-[160px] group-hover:opacity-100 text-white">Agregar al Carrito</span>
+    <span className="flex size-8 cursor-pointer items-center justify-center rounded-full bg-orange-400 font-extrabold text-white group-hover:rounded-l-none">+</span>
   </div>
   )
 }
 
 function CardProduct({product}) {
   const {name, price, cash_price, image, image_hover, id} = product;
+  const {addProduct} = useCartShop();
   const cuotes = price / 6;
   const handleClick = () =>{
     console.log(id);
+    addProduct(id, name, image, price);
   }
   return (
 <div className="font-rubik h-auto w-full border border-gray-200 bg-white shadow-md">
