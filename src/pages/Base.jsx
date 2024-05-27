@@ -1,7 +1,7 @@
 import Navbar from "@components/Navbar/Navbar";
 import WhatsappLogo from "@assets/whatsapp.svg";
 import Footer from "@components/Footer/Footer";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ModalCartShop from "@components/ModalCartShop/ModalCartShop";
 import ModalLinks from "@components/ModalLinks/ModalLinks";
 import { Outlet } from "react-router-dom";
@@ -20,11 +20,32 @@ function useLinks(){
 export default function Base({cantidad, products, removeProductById, incrementProductCount, decrementProductCount}) {
   const {visibleCart, toggleCart} = useShoppingCart();
   const {visibleLinks, toggleLinks} = useLinks();
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const scrollableRef = useRef(null);
+
+  useEffect(() => {
+    if (visibleLinks || visibleCart) {
+      // Guardar la posición del scroll
+      if (scrollableRef.current) {
+        setScrollPosition(scrollableRef.current.scrollTop);
+        // Deshabilitar el overflow-y
+        scrollableRef.current.style.overflowY = 'hidden';
+      }
+    } else {
+      // Restaurar la posición del scroll
+      if (scrollableRef.current) {
+        scrollableRef.current.style.overflowY = 'auto';
+        scrollableRef.current.scrollTop = scrollPosition;
+      }
+    }
+  }, [visibleCart, visibleLinks, scrollPosition]);
+
+  
 
   return (
+    <div ref={scrollableRef} className={"relative max-w-screen h-screen " + (visibleCart || visibleLinks?"overflow-y-hidden":"")}> 
   
-  <div className="relative max-w-screen h-screen ">
-    {/*<div className={"relative max-w-screen h-screen " + (visibleCart || visibleLinks?"":"")}> */}
+ {/* <div className="relative max-w-screen h-screen ">*/}
     <ModalLinks condition={visibleLinks} toggle={toggleLinks}/>
     <ModalCartShop condition={visibleCart} toggle={toggleCart} products={products} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount}/>
 
