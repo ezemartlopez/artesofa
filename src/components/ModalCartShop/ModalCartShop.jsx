@@ -67,7 +67,7 @@ function ModalCartShop({ condition, toggle, products, removeProductById, increme
                   </div>
                 </div>
                 {/* Body */}
-                <div className="w-full flex-grow overflow-y">
+                <div className="w-full flex-grow overflow-y-scroll flex flex-col gap-3">
                   {/* Body Content */}
                   {products.length === 0? <p>No hay elementos a mostrar</p>: null}
                   {products.map((product, index) => (<ItemProduct product={product} key={index} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount}/>))}
