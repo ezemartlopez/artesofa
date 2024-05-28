@@ -15,7 +15,21 @@ function useCartShop() {
     };
 
     const [cartList, setCartList] = useState(chargeCartShop());
-
+    const [messages, setMessages] = useState([]);
+    
+    const addMessage = (message) =>{
+        setMessages((prevList) => [...prevList, message]);
+        const {id} = message;
+        //console.log("Se agrego: " + message);
+        deleteMessage(id);
+    }
+    const deleteMessage = (id) =>{
+        setTimeout(() => {
+            setMessages((messages) => messages.filter((message) => message.id !== id));
+            //console.log("Se elimino: " + id);
+            //console.log(messages);
+        }, 5000);
+    }
     const amountProducts = () => {
         return cartList.reduce((accumulator, item) => accumulator + item.count, 0);
     };
@@ -35,6 +49,7 @@ function useCartShop() {
           const newProduct = createProductCart(id, name, url_image, price);
           setCartList((prevList) => [...prevList, newProduct]);
         }
+        addMessage({id, text:name});
     };
 
     const removeProductById = (id) => {
@@ -72,7 +87,8 @@ function useCartShop() {
         amountProducts,
         removeProductById,
         incrementProductCount,
-        decrementProductCount
+        decrementProductCount,
+        messages
     };
 }
 
