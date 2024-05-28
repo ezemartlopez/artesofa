@@ -11,13 +11,13 @@ import Esquineros from '../pages/Esquineros';
 import Complemento from '../pages/Complemento';
 import useCartShop from "@hooks/useCartShop";
 function RouterApp() {
-  const {cartList, addProduct, amountProducts, removeProductById, incrementProductCount, decrementProductCount} = useCartShop();
+  const {cartList, addProduct, amountProducts, removeProductById, incrementProductCount, decrementProductCount, messages} = useCartShop();
   const cantidad = amountProducts();
 
   return (
     <Router>  
       <Routes>
-        <Route path="/" element={<Base cantidad={cantidad} products={cartList} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount}/>}>
+        <Route path="/" element={<Base cantidad={cantidad} products={cartList} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount} messages={messages}/>}>
           <Route path="" element={<Home addProduct={addProduct}/>} />
           <Route path="sofas/" element={<Sofas addProduct={addProduct}/>} />
           <Route path="sofas-cama/" element={<SofaCama addProduct={addProduct}/>} />
