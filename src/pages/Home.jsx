@@ -6,7 +6,7 @@ import InstagramLink from "@components/InstagramLink/InstagramLink";
 import Slider from "@components/Slider/Slider";
 
 function Home({addProduct}) {
-  const url = "http://localhost:5000/";
+  const url = "/";
   return (
     <>
         <Slider/>

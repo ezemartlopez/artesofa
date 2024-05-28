@@ -2,7 +2,7 @@ import ProductsContainer from "@components/ProductsContainer/ProductsContainer";
 import TitlePage from "@components/titlePage/TitlePage";
 
 function SofaCama({addProduct}) {
-  const url = "http://localhost:5000/sofas-cama/";
+  const url = "/sofas-cama/";
   return (
     <>
       <TitlePage titulo={"Sofás Cama"} links={["", ">", "Sofa Cama"]}/>

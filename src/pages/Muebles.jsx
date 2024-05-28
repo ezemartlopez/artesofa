@@ -2,7 +2,7 @@ import ProductsContainer from "@components/ProductsContainer/ProductsContainer";
 import TitlePage from "@components/titlePage/TitlePage";
 
 function Muebles({addProduct}) {
-  const url = "http://localhost:5000/muebles/";
+  const url = "/muebles/";
   return (
     <>
       <TitlePage titulo={"Muebles"} links={["", ">", "Muebles"]}/>
