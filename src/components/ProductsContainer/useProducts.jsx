@@ -14,9 +14,10 @@ function customProduct(product){
 
 function useProducts(urlProducts) {
   const [products, setProducts] = useState([]);
-  console.log("url en useProduct: " + apiUrl);
+  //console.log("url en useProduct: " + apiUrl + );
+  const url = apiUrl + urlProducts;
   useEffect(() => {
-    fetch(urlProducts)
+    fetch(url)
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
