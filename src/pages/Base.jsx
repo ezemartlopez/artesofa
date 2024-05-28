@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import ModalCartShop from "@components/ModalCartShop/ModalCartShop";
 import ModalLinks from "@components/ModalLinks/ModalLinks";
 import { Outlet } from "react-router-dom";
+import Message from "../components/Message/Message";
 
 function useShoppingCart(){
   const [visibleCart, setvisiblecart] = useState(false);
@@ -13,11 +14,11 @@ function useShoppingCart(){
 }
 function useLinks(){
   const [visibleLinks, setvisiblelinks] = useState(false);
-  const toggleLinks = () => {setvisiblelinks(!visibleLinks); console.log("abri links");};
+  const toggleLinks = () => {setvisiblelinks(!visibleLinks);};
   return {visibleLinks, toggleLinks};
 }
 
-export default function Base({cantidad, products, removeProductById, incrementProductCount, decrementProductCount}) {
+export default function Base({cantidad, products, removeProductById, incrementProductCount, decrementProductCount, messages}) {
   const {visibleCart, toggleCart} = useShoppingCart();
   const {visibleLinks, toggleLinks} = useLinks();
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -56,6 +57,16 @@ export default function Base({cantidad, products, removeProductById, incrementPr
           <nav className="w-full">
             <Navbar toggle={toggleCart} navigation={toggleLinks} cantidad={cantidad}></Navbar>
           </nav>
+          <div className="relative">
+            <div className="absolute top-4 right-0 z-50 sm:w-[400px] w-full">
+              <ul className="w-full flex flex-col gap-2">
+               {messages.length > 0? messages.map((message, index) => (
+               <Message key={index} text={message.text}/>
+               )):null} 
+              </ul>
+              
+            </div>
+          </div>
         </header>
 
         <main className="h-auto w-full block">
