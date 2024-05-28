@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import ModalCartShop from "@components/ModalCartShop/ModalCartShop";
 import ModalLinks from "@components/ModalLinks/ModalLinks";
 import { Outlet } from "react-router-dom";
-import Message from "../components/Message/Message";
+import Message from "@components/Message/Message";
 
 function useShoppingCart(){
   const [visibleCart, setvisiblecart] = useState(false);
