@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+const apiUrl = import.meta.env.VITE_API_URL;
 function customProduct(product){
   let newData = {
     id:product.id,
@@ -14,7 +14,7 @@ function customProduct(product){
 
 function useProducts(urlProducts) {
   const [products, setProducts] = useState([]);
-  //console.log("url useProduct: " + urlProducts);
+  console.log("url useProduct: " + apiUrl);
   useEffect(() => {
     fetch(urlProducts)
     .then(response => {
