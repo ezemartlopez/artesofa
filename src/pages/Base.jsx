@@ -61,7 +61,7 @@ export default function Base({cantidad, products, removeProductById, incrementPr
             <div className="absolute top-4 right-0 z-50 sm:w-[400px] w-full">
               <ul className="w-full flex flex-col gap-2">
                {messages.length > 0? messages.map((message, index) => (
-               <Message key={index} text={message.text}/>
+               <Message key={index} text={"Se agrego: " + message.text}/>
                )):null} 
               </ul>
               
