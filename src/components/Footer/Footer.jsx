@@ -26,7 +26,7 @@ function Footer() {
         </div>
 
         <div className="w-full py-[15px] xl:px-[400px] md:px-0 flex md:flex-row flex-col items-center md:gap-0 gap-4 justify-between">
-          <span className="font-rubik text-xs">© Copyright Arte-Sofa - 2024</span>
+          <span className="font-rubik text-xs">© Copyright Re-Arte-Sofa - 2024</span>
           <span className="font-rubik text-xs">Creado por Ezequiel M.L.</span>
           <span className="font-rubik text-xs">Todos los derechos reservados.</span>
         </div>
