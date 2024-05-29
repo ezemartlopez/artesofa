@@ -18,7 +18,7 @@ function obtenerLinks(listaString){
 function Breadcrumb({links}) {
     const lista = obtenerLinks(links);
   return (
-    <div className="flex gap-1 text-white">
+    <div className="flex gap-1 text-white text-sm">
         {
          lista.map(obj => (obj.url !== null? <a href={obj.url}>{obj.text}</a>:<span>{obj.text}</span>))
         }
