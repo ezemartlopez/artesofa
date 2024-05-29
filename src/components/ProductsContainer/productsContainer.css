@@ -1,0 +1,13 @@
+/* ProductsContainer.css */
+.product-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+  
+  @media (max-width: 450px) {
+    .product-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+  }
+  
