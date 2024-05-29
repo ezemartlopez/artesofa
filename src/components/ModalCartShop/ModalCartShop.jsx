@@ -16,7 +16,7 @@ function formatNumberWithDots(numberString) {
 
 function ItemProduct({product, removeProductById, incrementProductCount, decrementProductCount}){
   return (
-    <div className="py-1 relative flex bg-green-400">
+    <div className="py-1 relative flex">
       <div className="absolute right-3 h-full flex flex-col justify-center">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" onClick={() => removeProductById(product.id)} 
           className="size-10 p-1 stroke-black stroke-1 cursor-pointer rounded-full border hover:border-slate-500 ">
@@ -27,7 +27,7 @@ function ItemProduct({product, removeProductById, incrementProductCount, decreme
         <img src={product.url_image} alt="" className="h-[80px] w-[100px] sm:h-[100px] sm:w-[120px] object-cover"/> 
       </div>
       <div className="flex-grow flex flex-col pl-6 justify-between">
-        <span className="sm:text-base text-sm">{product.name}</span>
+        <span className="sm:text-base text-sm truncate">{product.name}</span>
         <span className="font-bold">${formatNumberWithDots(product.price)}</span>
         <div className="w-min rounded-full p-1 border border-slate-300/80 flex">
           <span onClick={() => decrementProductCount(product.id)} className="sm:size-8 size-6 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">-</span>
