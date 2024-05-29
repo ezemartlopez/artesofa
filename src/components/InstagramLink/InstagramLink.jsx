@@ -10,7 +10,7 @@ function InstagramLink() {
               </a>
             </div>
             <a href="https://instagram.com/artesofasillones" target="_blank">
-              <h3 className="sm:text-[60px] sm:leading-[55px] text-[40px] leading-[30px] font-bold text-orange-500 opacity-90 flex items-center">artesofasillones</h3>
+              <h3 className="sm:text-[60px] sm:leading-[55px] text-[35px] leading-[30px] font-bold text-orange-500 opacity-90 flex items-center">artesofasillones</h3>
             </a>
         </div>
         <a href="https://instagram.com/artesofasillones" target="_blank" className="min-w-[100px] max-w-max h-[36px] px-[20px] rounded-full border border-orange-500 text-orange-500 text-[12px] hover:bg-orange-500 hover:text-white transition-colors duration-500 flex items-center">S E G U I N O S</a>
