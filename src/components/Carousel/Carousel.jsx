@@ -4,6 +4,7 @@ export default function Carousel({
     slides,
     autoSlide = false,
     autoSlideInterval = 3000,
+    cover = false
   }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,7 +32,7 @@ export default function Carousel({
 
   return (
     <div className='min-w-max h-full w-full relative group'>
-      <div style={{ backgroundImage: `url(${slides[currentIndex]})`, backgroundColor:"#F7F2EF" }} className='w-full h-full rounded-2xl bg-center bg-contain bg-no-repeat duration-500'></div>
+      <div style={{ backgroundImage: `url(${slides[currentIndex]})`, backgroundColor:"#F7F2EF", backgroundSize: cover?"cover":"contain"}} className='w-full h-full rounded-2xl bg-center bg-no-repeat duration-500'></div>
       {/* Left Arrow */}
       <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-slate-500/50 text-white cursor-pointer'>
         <div onClick={prevSlide} size={30}>
