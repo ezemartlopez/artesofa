@@ -10,6 +10,7 @@ import Individuales from '../pages/Individuales';
 import Esquineros from '../pages/Esquineros';
 import Complemento from '../pages/Complemento';
 import useCartShop from "@hooks/useCartShop";
+import Producto from '../pages/Producto';
 function RouterApp() {
   const {cartList, addProduct, amountProducts, removeProductById, incrementProductCount, decrementProductCount, messages} = useCartShop();
   const cantidad = amountProducts();
@@ -19,6 +20,7 @@ function RouterApp() {
       <Routes>
         <Route path="/" element={<Base cantidad={cantidad} products={cartList} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount} messages={messages}/>}>
           <Route path="" element={<Home addProduct={addProduct}/>} />
+          <Route path="producto/:id" element={<Producto/>} />
           <Route path="sofas/" element={<Sofas addProduct={addProduct}/>} />
           <Route path="sofas-cama/" element={<SofaCama addProduct={addProduct}/>} />
           <Route path="rinconeros/" element={<Rinconeros addProduct={addProduct}/>} />
