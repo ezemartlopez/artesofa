@@ -45,19 +45,21 @@ function CardProduct({product, addProduct}) {
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
-        <div className="relative sm:h-[430px] h-[300px] w-full cursor-pointer sm:flex-grow">
+        <div className="relative sm:h-[430px] h-[300px] w-full sm:flex-grow">
           {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
           <ButtonAddCart handleClick={handleClick}/>
           <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-700 ease-in-out" />
           <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
         </div>
         {/*<!-- Contenedor del contenido -->*/}
+        <a href={"/producto/" + id} className="hover:opacity-35 hover:bg-slate-300/50">
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">
           <span className="block font-normal">{name}</span>
           {cash_price ? <span className="block font-bold text-orange-500">EFECTIVO $ {formatNumberWithDots(cash_price)}</span>: null}
           <span className="block font-medium">LISTA $ {formatNumberWithDots(price)}</span>
           <span className="block text-sm">{CUOTAS} cuotas sin interés de $ {formatNumberWithDots(cuotesString)}</span>
         </div>
+        </a>
       </div>
     </div>
   );
