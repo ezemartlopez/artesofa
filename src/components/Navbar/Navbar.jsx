@@ -1,7 +1,7 @@
 import Logo from "@assets/Navbar/logo.png";
 import Carrito from "@assets/Navbar/cart.svg";
-import Search from "@assets/Navbar/search.svg";
 import Menu from "@assets/Navbar/menu.svg";
+//import SearchNavbar from "@components/SearchNavbar/SearchNavbar";
 
 function Navbar({toggle, navigation, cantidad}) {
   return (
@@ -11,13 +11,11 @@ function Navbar({toggle, navigation, cantidad}) {
               <div className="cursor-pointer" onClick={navigation}>
                 <img src={Menu} alt="Menu" className="size-8"/>
               </div>
+              {/** 
               <div className="hidden xl:inline-block">
-                <div className="flex py-1 px-4 border-[1px] border-black rounded-3xl gap-1 ">
-                  <input type="text" className="w-[350px] rounded-lg border-none outline-none font-rubik" placeholder="Buscar"/>
-                  <img src={Search} alt="search_logo" className="size-6 cursor-pointer"/>
-                </div>  
+                <SearchNavbar/>
               </div>
-              
+              */}
             </div>
 
             <div className="h-full w-auto flex justify-center items-center cursor-pointer">
