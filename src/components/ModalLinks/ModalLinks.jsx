@@ -1,6 +1,7 @@
 import Xmark from "@assets/Xmark/Xmark.svg";
 import { useEffect, useState } from "react";
 import ModalLeft from "../Modal/ModalLeft";
+import SearchNavbar from "../SearchNavbar/SearchNavbar";
   
 function ModalLinks({ condition, toggle }) {
   const [show, setShow] = useState(false);
@@ -28,7 +29,13 @@ function ModalLinks({ condition, toggle }) {
                 {/* Body */}
                 <div className="w-full flex-grow overflow-y">
                   {/* Body Content */}
-                  <ul className="w-full flex flex-col gap-4">
+                  
+                  {/* 
+                  <div className="xl:hidden inline-block">
+                    <SearchNavbar/>
+                  </div>
+                  */}
+                  <ul className="w-full flex flex-col gap-4 mt-4">
                     <li><a href="/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Inicio</a></li>
                     <li><a href="/sofas/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás</a></li>
                     <li><a href="/sofas-cama/" className="block rounded-md pl-2 text-rubik text-lg font-bold hover:text-black/50">Sofás Cama</a></li>
