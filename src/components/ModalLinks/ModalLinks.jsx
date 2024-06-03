@@ -1,7 +1,7 @@
 import Xmark from "@assets/Xmark/Xmark.svg";
 import { useEffect, useState } from "react";
 import ModalLeft from "../Modal/ModalLeft";
-import SearchNavbar from "../SearchNavbar/SearchNavbar";
+//import SearchNavbar from "../SearchNavbar/SearchNavbar";
   
 function ModalLinks({ condition, toggle }) {
   const [show, setShow] = useState(false);
