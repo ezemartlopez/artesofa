@@ -22,10 +22,15 @@ function formatNumberWithDots(numberString) {
 
 function ButtonAddCart({handleClick}) {
   const [toggle, setToggle] = useState(true);
-
+  const handleClickCart = () =>{
+    handleClick();
+    setTimeout(() => {
+      setToggle(prev=>!prev);
+    }, 3000);
+  }
   return(
     <div className="group absolute z-10 right-2 top-2 flex h-10 w-auto justify-end">
-    <span onClick={handleClick} className={"flex w-0 translate-x-8 items-center overflow-hidden text-nowrap rounded-full bg-orange-400 pl-4 opacity-0 transition-all duration-500 text-white " + (toggle? "": "w-[180px] opacity-100")}>Agregar al Carrito</span>
+    <span onClick={handleClickCart} className={"flex cursor-pointer w-0 translate-x-8 items-center overflow-hidden text-nowrap rounded-full bg-orange-400 pl-4 opacity-0 transition-all duration-500 text-white " + (toggle? "": "w-[180px] opacity-100")}>Agregar al Carrito</span>
     <span className="flex size-10 z-20 cursor-pointer items-center justify-center rounded-full bg-orange-400 font-extrabold text-white" onClick={() => setToggle(prev=>!prev)}>+</span>
   </div>
   )
@@ -45,14 +50,14 @@ function CardProduct({product, addProduct}) {
       {/*<!-- Contenedor de la card definida por defecto -->*/}
       <div className="flex h-full w-full flex-col justify-start">
         {/*<!-- Contenedor para la imagen -->*/}
-        <div className="relative sm:h-[430px] h-[300px] w-full sm:flex-grow">
+        <div className="relative sm:h-[410px] h-[300px] w-full sm:flex-grow">
           {/*<span className="absolute size-10 top-2 right-2 rounded-full z-10 flex items-center justify-center  bg-orange-400/50 text-white font-semibold text-2xl hover:bg-orange-400" onClick={handleClick}>+</span>*/}
           <ButtonAddCart handleClick={handleClick}/>
           <img src={image} alt="imagen" className="absolute h-full w-full transform object-cover transition duration-700 ease-in-out" />
           <img src={image_hover} alt="imagen-hover" className="absolute h-full w-full transform object-cover opacity-0 transition duration-700 ease-in-out hover:opacity-100" />
         </div>
         {/*<!-- Contenedor del contenido -->*/}
-        <a href={"/producto/" + id} className="hover:opacity-35 hover:bg-slate-300/50">
+        <a href={"/producto/" + id} className="hover:opacity-35 hover:bg-slate-100/20">
         <div className="flex h-[130px] w-full flex-col items-center justify-start pt-3">
           <span className="block font-normal">{name}</span>
           {cash_price ? <span className="block font-bold text-orange-500">EFECTIVO $ {formatNumberWithDots(cash_price)}</span>: null}
