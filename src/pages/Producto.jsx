@@ -7,41 +7,65 @@ import Carousel from "../components/Carousel/Carousel";
 
 function formatNumberWithDots(numberString) {
   // Convertir el string a un número
-  const number = parseFloat(numberString);
+  let number = parseFloat(numberString);
   // Verificar si la conversión fue exitosa
   if (isNaN(number)) {
-      throw new Error("Input is not a valid number");
+      //throw new Error("Input is not a valid number");
+      number = 0;
   }
   // Formatear el número con puntos como separadores de miles
   return number.toLocaleString('de-DE');
 }
 
-function Producto() {
+function Producto({addProduct}) {
   const {id} = useParams();
   const url = apiUrl + "/productos/" + id;
   const [product, setproduct] = useState(null);
+  const [cant, setcantidad] = useState(1);
 
   useEffect(() => {
     fetch(url)
     .then(response => response.json())
     .then(data => setproduct(data))
     .catch(error => console.error('Error:', error));
-  }, [])
-  const imagenes = product? [product["image_primary"], product["image_secondary"]]:[];
+  }, []);
+
+
+  let imagenes = product? [product["image_primary"], product["image_secondary"]]:[];
+  const setList = new Set(imagenes);
+  imagenes = Array.from(setList);
+
+  const addProductItem = () =>{
+    for (let index = 0; index < cant; index++) {
+      addProduct(product.id, product.name, imagenes[0], product.price);
+    }
+    setcantidad(1);
+  }
+  const incrementProduct = () =>{
+    setcantidad(prev => prev + 1);
+  }
+  const decrementProduct = () =>{
+    setcantidad(prev => (prev - 1) === 0? prev : prev - 1);
+  }
+
   return (
-    <>
-      <div className="w-full flex flex-col-reverse xl:flex-row pt-4">
+    <div className="w-full flex flex-col items-center 2xl:items-start">
+      <div className="2xl:w-full lg:w-auto w-full flex flex-col-reverse 2xl:flex-row pt-4">
         
         <div className="flex-grow px-4 xl:px-8">
-            <div className="flex text-sm text-slate-600 gap-2 pt-2">
-              <span>Inicio</span>
+            <div className="flex text-sm text-slate-600 gap-2 pt-2 font-rubik">
+              <a href="/">
+                <span>Inicio</span>
+              </a>
               <span>{">"}</span>
-              <span className="capitalize">{product?.type}</span>
+              <a href={"/" + product?.type + "/"}>
+                <span className="capitalize">{product?.type}</span>
+              </a>
               <span>{">"}</span>
               <span>{product?.name}</span>
             </div>
           <div className="flex flex-col">
-            <h1 className="text-4xl font-rubik font-bold py-4">{product?.name}</h1>
+            <h1 className="text-4xl font-rubik font-bold py-8">{product?.name}</h1>
             {product?.cash_price? 
             <div className="flex flex-col gap-2 py-1">
               <span className=" text-orange-500 font-rubik font-bold text-[22px]">EFECTIVO: ${formatNumberWithDots(product?.cash_price + "")}</span>
@@ -63,20 +87,45 @@ function Producto() {
                 <span className="font-rubik text-sm"><span className="text-orange-500 text-[15px] font-medium">6 cuotas sin interés</span> de $94.633,33</span>
               </div>
               <span className="text-xs font-rubik text-orange-500">Ver más detalles</span>
-              <div className="w-full pt-2">
-                <div className="">
-                  
+              <div className="w-full py-6">
+              
+                <div className="w-min rounded-full p-1 border border-slate-300/80 flex items-center">
+                  <span onClick={decrementProduct} className="sm:size-8 size-6 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">-</span>
+                  <span className="h-full w-20 flex justify-center items-center">{cant}</span>
+                  <span onClick={incrementProduct} className="sm:size-8 size-6 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">+</span>
                 </div>
-                <button className="uppercase border-2 font-rubik font-medium transition-colors duration-500 border-orange-500 bg-orange-500 text-white w-full py-2 rounded-2xl hover:bg-white hover:text-orange-500">agregar al carrito</button>
+        
+                <button onClick={addProductItem} className="uppercase xl:max-w-[900px] lg:max-w-[870px] my-6 border-2 font-rubik font-medium transition-colors duration-500 border-orange-500 bg-orange-500 text-white w-full py-2 rounded-2xl hover:bg-white hover:text-orange-500">agregar al carrito</button>
               </div>
             </div>
           </div>
         </div>
-        <div className="xl:w-[1000px] xl:h-[700px] w-full lg:h-[600px] md:h-[500px] sm:h-[400px] h-[350px]">
+        <div className="2xl:w-[1000px] xl:w-[900px] lg:w-[800px] w-full lg:h-[600px] md:h-[500px] sm:h-[400px] h-[350px]">
           <Carousel slides={imagenes} autoSlide={true} cover={true}/>
         </div>
       </div>
-    </>
+      <div className="px-4 xl:px-8 max-w-[800px] w-full text-base">
+              <h3 className="w-min text-orange-500 font-rubik pb-1 border-b-2 border-orange-500">Descripcion</h3>
+              <div className="flex flex-col pt-2 gap-3">
+                {product?.description.map((item) => {
+                  if (item.type === "bold") {
+                    return <p className="font-rubik italic lowercase font-bold">{item.text}</p>;
+                  }
+                  if (item.type === "normal") {
+                    return <p className="font-rubik lowercase">{item.text}</p>;
+                  }
+                  if (item.type === "list") {
+                    return  <div>
+                              <span className="font-rubik italic lowercase font-bold">{item.title}</span>
+                              <ul className="pt-2">
+                                {item.items.map( subitem => <li className="list-disc ml-6 font-rubik">{subitem}</li>)}
+                              </ul>
+                            </div>;
+                  }
+                })}
+              </div>
+        </div>
+    </div>
   )
 }
 
