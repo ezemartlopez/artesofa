@@ -50,7 +50,10 @@ function Producto({addProduct}) {
 
   return (
     <div className="w-full flex flex-col items-center 2xl:items-start">
-      <div className="2xl:w-full lg:w-auto w-full flex flex-col-reverse 2xl:flex-row pt-4">
+      <div className="px-4 xl:px-8 py-4 w-full">
+        <button onClick={() => window.history.back()} className="max-w-[150px] font-rubik font-medium transition-colors duration-500 border border-orange-500 bg-orange-500 text-white w-full py-2 px-4 rounded-2xl hover:bg-white hover:text-orange-500">Regresar</button>
+      </div>
+      <div className="2xl:w-full lg:w-auto w-full flex flex-col-reverse 2xl:flex-row pt-2">
         
         <div className="flex-grow px-4 xl:px-8">
             <div className="flex text-sm text-slate-600 gap-2 pt-2 font-rubik">
@@ -123,6 +126,7 @@ function Producto({addProduct}) {
                             </div>;
                   }
                 })}
+                {product?.description.length === 0 ? <p className="font-rubik italic lowercase font-bold">No hay una descrpcion disponible</p>: null}
               </div>
         </div>
     </div>
