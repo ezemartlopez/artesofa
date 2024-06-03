@@ -20,7 +20,7 @@ function RouterApp() {
       <Routes>
         <Route path="/" element={<Base cantidad={cantidad} products={cartList} removeProductById={removeProductById} incrementProductCount={incrementProductCount} decrementProductCount={decrementProductCount} messages={messages}/>}>
           <Route path="" element={<Home addProduct={addProduct}/>} />
-          <Route path="producto/:id" element={<Producto/>} />
+          <Route path="producto/:id" element={<Producto addProduct={addProduct} />} />
           <Route path="sofas/" element={<Sofas addProduct={addProduct}/>} />
           <Route path="sofas-cama/" element={<SofaCama addProduct={addProduct}/>} />
           <Route path="rinconeros/" element={<Rinconeros addProduct={addProduct}/>} />
