@@ -2,7 +2,7 @@
 function Footer() {
   return (
     <div className="w-full">
-        <div className="w-full py-[20px] flex justify-center items-center gap-[10px]">
+        <div className="w-full pb-[20px] pt-[40px] flex justify-center items-center gap-[10px]">
           <div className="size-[50px] flex justify-center items-center">
             <a href="https://instagram.com/artesofasillones" target="_blank">
               <img src="https://img.icons8.com/?size=256&id=32292&format=png" alt="instagram" className="cursor-pointer size-[30px] hover:size-[36px]"/>
