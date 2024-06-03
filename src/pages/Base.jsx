@@ -79,7 +79,7 @@ export default function Base({cantidad, products, removeProductById, incrementPr
           <Footer/>
         </footer>
 
-        <div className="sticky bottom-0 right-0 min-h-[50px] w-full flex items-center justify-center">
+        <div className="sticky z-30 bottom-0 right-0 min-h-[50px] w-full flex items-center justify-center">
           <div className="w-full h-full flex justify-end">
             {/*<span>Bases y condiciones de la aplicacion</span>*/}
             <div className="size-10 bg-green-500 rounded-full shadow-xl flex justify-center items-center">
