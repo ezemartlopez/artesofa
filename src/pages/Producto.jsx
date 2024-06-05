@@ -51,7 +51,7 @@ function Producto({addProduct}) {
   return (
     <div className="w-full flex flex-col items-center 2xl:items-start">
       <div className="px-4 xl:px-8 py-4 w-full">
-        <button onClick={() => window.history.back()} className="max-w-[150px] font-rubik font-medium transition-colors duration-500 border border-orange-500 bg-orange-500 text-white w-full py-2 px-4 rounded-2xl hover:bg-white hover:text-orange-500">Regresar</button>
+        <button onClick={() => window.history.back()} className="max-w-[150px] font-rubik font-medium transition-colors duration-500 border border-orange-500 bg-orange-500 text-white w-full py-1 px-4 rounded-xl hover:bg-white hover:text-orange-500">Regresar</button>
       </div>
       <div className="2xl:w-full lg:w-auto w-full flex flex-col-reverse 2xl:flex-row pt-2">
         
@@ -75,7 +75,7 @@ function Producto({addProduct}) {
               <span className="font-rubik text-sm">¿Cómo pagar en efectivo/transferencia?</span>
             </div>
             : null}
-            <div className="flex flex-col pt-3 gap-1 xl:gap-3">
+            <div className="flex flex-col pt-3 gap-1 xl:gap-4">
               <span className="text-black font-rubik font-semibold text-[22px]">LISTA: ${formatNumberWithDots(product?.price + "")}</span>
               <div className="flex gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="size-5 stroke-1 stroke-orange-500">
@@ -90,7 +90,7 @@ function Producto({addProduct}) {
                 <span className="font-rubik text-sm"><span className="text-orange-500 text-[15px] font-medium">6 cuotas sin interés</span> de $94.633,33</span>
               </div>
               <span className="text-xs font-rubik text-orange-500">Ver más detalles</span>
-              <div className="w-full py-6">
+              <div className="w-full py-6 flex flex-col gap-4">
               
                 <div className="w-min rounded-full p-1 border border-slate-300/80 flex items-center">
                   <span onClick={decrementProduct} className="sm:size-8 size-6 rounded-full font-bold text-white bg-orange-400 flex justify-center items-center cursor-pointer">-</span>
@@ -107,7 +107,7 @@ function Producto({addProduct}) {
           <Carousel slides={imagenes} autoSlide={true} cover={true}/>
         </div>
       </div>
-      <div className="px-4 xl:px-8 max-w-[800px] w-full text-base">
+      <div className="px-4 xl:px-8 max-w-[800px] w-full text-base flex flex-col gap-2">
               <h3 className="w-min text-orange-500 font-rubik pb-1 border-b-2 border-orange-500">Descripcion</h3>
               <div className="flex flex-col pt-2 gap-3">
                 {product?.description.map((item) => {
